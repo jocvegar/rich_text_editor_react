@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Editor } from 'slate-react';
 import { Value } from 'slate';
+import BoldMark from './BoldMark';
 
 const initialValue = Value.fromJSON({
 	document: {
@@ -21,7 +22,7 @@ const initialValue = Value.fromJSON({
 			},
 		],
 	},
-})
+});
 
 export default class TextEditor extends Component {
 	state = {
@@ -32,9 +33,34 @@ export default class TextEditor extends Component {
 		this.setState({value})
 	}
 
+	onKeyDown = (e, change) => {
+		console.log(e.key);
+		if (!e.metaKey) { return }
+		e.preventDefault();
+
+		switch (e.key) {
+			case 'b': {
+				change.toggleMark('bold')
+				return true
+			}
+		}
+	}
+
+	renderMark = props => {
+		switch (props.mark.type) {
+			case 'bold':
+				return <BoldMark {...props} />
+		}
+	}
+
 	render() {
 		return (
-			<Editor value={this.state.value} onChange={this.onChange} />
+			<Editor
+				value={this.state.value}
+				onChange={this.onChange}
+				onKeyDown={this.onKeyDown}
+				renderMark={this.renderMark}
+			/>
 		);
 	}
 }
