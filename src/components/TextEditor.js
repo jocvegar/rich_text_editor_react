@@ -83,7 +83,7 @@ export default class TextEditor extends Component {
 		}
 	}
 
-	onMarkClick = (e, type) => {
+	onIconClick = (e, type) => {
 		e.preventDefault;
 		const { value } = this.state;
 		// const value = this.state.value;
@@ -95,9 +95,11 @@ export default class TextEditor extends Component {
 		switch (props.mark.type) {
 			case 'bold':
 				return <BoldMark {...props} />;
+				// return <bold {...props.attributes}>{props.children}</bold>;
 
 			case 'italic':
 				return <ItalicMark {...props} />;
+				// return <italic {...props.attributes}>{props.children}</italic>;
 
 			case 'code':
 				return <code {...props.attributes}>{props.children}</code>;
@@ -122,33 +124,30 @@ export default class TextEditor extends Component {
 			<Fragment>
 				<FormatToolbar>
 					<button
-						onPointerDown={(e) => this.onMarkClick(e, 'bold')}
+						onPointerDown={(e) => this.onIconClick(e, 'bold')}
 						className="tooltip-icon-button">
 						<Icon icon={bold} />
 					</button>
 					<button
-						onPointerDown={(e) => this.onMarkClick(e, 'italic')}
+						onPointerDown={(e) => this.onIconClick(e, 'italic')}
 						className="tooltip-icon-button">
 						<Icon icon={italic} />
 					</button>
 					<button
-						onPointerDown={(e) => this.onMarkClick(e, 'code')}
+						onPointerDown={(e) => this.onIconClick(e, 'code')}
 						className="tooltip-icon-button">
 						<Icon icon={code} />
 					</button>
 					<button
-						onPointerDown={(e) => this.onMarkClick(e, 'list')}
+						onPointerDown={(e) => this.onIconClick(e, 'list')}
 						className="tooltip-icon-button">
 						<Icon icon={list} />
 					</button>
 					<button
-						onPointerDown={(e) => this.onMarkClick(e, 'underline')}
+						onPointerDown={(e) => this.onIconClick(e, 'underline')}
 						className="tooltip-icon-button">
 						<Icon icon={underline} />
 					</button>
-
-
-
 				</FormatToolbar>
 				<Editor
 					value={this.state.value}
