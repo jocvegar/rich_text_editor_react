@@ -26,7 +26,7 @@ const initialValue = Value.fromJSON({
 						object: 'text',
 						leaves: [
 							{
-								text: 'Get me away from here!'
+								text: 'Pastrami andouille corned beef buffalo ham jerky strip steak meatball hamburger filet mignon. Doner frankfurter pancetta landjaeger ball tip, pig pork t-bone filet mignon hamburger ham hock. Shankle pork loin tenderloin, beef meatloaf turducken jowl rump jerky hamburger tongue buffalo prosciutto shoulder venison. Venison tongue tri-tip, turducken frankfurter kevin capicola kielbasa. Pancetta pork chop capicola, tongue prosciutto sausage cow ribeye pastrami. Short ribs shoulder chuck, pastrami andouille turducken hamburger. Cow drumstick brisket strip steak tail, picanha buffalo shoulder.'
 							},
 						],
 					},
