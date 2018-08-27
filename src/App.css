@@ -22,6 +22,22 @@
   font-size: large;
 }
 
+.format-toolbar {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  border-bottom: solid 1.7px rgba(199, 198, 225, 0.15);
+  padding: 10px 0;
+  margin: 0 0 10px 0;
+}
+
+.tooltip-icon-button {
+  border: 0;
+}
+
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
