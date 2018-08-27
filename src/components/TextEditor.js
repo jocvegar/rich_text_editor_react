@@ -76,7 +76,6 @@ export default class TextEditor extends Component {
 				return true
 			}
 
-
 			default: {
 				return;
 			}
